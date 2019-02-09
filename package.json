@@ -1,0 +1,25 @@
+{
+  "name": "meetup-cdk",
+  "version": "1.0.0",
+  "description": "demo project for meetup 12022019 cdk",
+  "main": "index.js",
+  "scripts": {
+    "cdk": "cdk",
+    "deploy": "cdk deploy"
+  },
+  "author": "farminf",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-cognito": "^0.24.1",
+    "@aws-cdk/aws-dynamodb": "^0.24.1",
+    "@aws-cdk/aws-lambda": "^0.24.1",
+    "@aws-cdk/aws-s3": "^0.24.1",
+    "@aws-cdk/aws-s3-deployment": "^0.24.1",
+    "@aws-cdk/cdk": "^0.24.1",
+    "aws-cdk": "^0.24.1"
+  }
+}
