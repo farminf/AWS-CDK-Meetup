@@ -10,14 +10,12 @@ class MeetupApp extends App {
     super(argv);
 
     this.backendStack = new BackendStack(this, "backendStack", {
-      env: { region: "eu-west-1" },
+      env: { region: "eu-west-1" }
     });
-
 
     this.frontendStack = new FrontendStack(this, "frontendStack", {
-      env: { region: "us-east-1" },
+      env: { region: "us-east-1" }
     });
-
   }
 }
 
