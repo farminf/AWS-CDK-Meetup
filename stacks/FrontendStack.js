@@ -3,7 +3,6 @@
 const path = require("path");
 
 const cdk = require("@aws-cdk/cdk");
-const { CfnParameter } = require("@aws-cdk/aws-ssm");
 const { Bucket } = require("@aws-cdk/aws-s3");
 const { BucketDeployment, Source } = require("@aws-cdk/aws-s3-deployment");
 
@@ -14,18 +13,8 @@ class FrontendStack extends cdk.Stack {
     this.addBucket();
     this.deployDashboard();
 
-    this.exportToSSM(
-      "dashboardUrl",
-      "/website/storetime/url",
-      this.dashboardBucket.bucketWebsiteUrl
-    );
-  }
-
-  exportToSSM(name, parameterName, value) {
-    new CfnParameter(this, `param${name}`, {
-      type: "String",
-      name: parameterName,
-      value
+    new cdk.Output(this, "DashboardURL", {
+      value: this.dashboardBucket.bucketWebsiteUrl
     });
   }
 

@@ -14,6 +14,7 @@ class BackendStack extends cdk.Stack {
     this.addLambda();
     this.addAPI();
 
+    // Export the root url for api to use it in the dashboard while we build it
     this.exportToSSM("apiURL", "/api/storetime", this.api.url);
   }
 
