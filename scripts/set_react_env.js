@@ -1,5 +1,8 @@
 const AWS = require("aws-sdk");
 
+const credentials = new AWS.SharedIniFileCredentials({ profile: "farmin" });
+AWS.config.credentials = credentials;
+
 const log = (...args) => console.error("* _set-react-app-env.js:\t", ...args);
 
 const ssm = new AWS.SSM({
